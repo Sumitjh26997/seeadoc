@@ -1,0 +1,77 @@
+<ion-header>
+	<ion-navbar color='navbarColor'>
+		<ion-title>{{doctor.name}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding-5>
+	<ion-grid style="padding: 0px;">
+		<ion-row id="firstrow" style="background: #34d0dd;">
+			<ion-col col-5>
+				<img [src]="doctor.photo || 'assets/imgs/doctor.png'" class="img-circle" style="height: 150px;
+				width: 100%;">
+			</ion-col>
+			<ion-col col-7>
+				<ion-row>
+					<ion-col col-12>
+						<p class="primary-one">{{clinic.isOpen ? 'Clinic is open': 'Clinic is Closed'}}</p>
+					</ion-col>
+					<ion-col col-12>
+						<h5 class="doctor-name">{{doctor.name}}</h5>
+						<p class="doctor-specialization">{{doctor.specialization}}</p>
+					</ion-col>
+					<ion-col col-12>
+					</ion-col>
+				</ion-row>
+			</ion-col>
+		</ion-row>
+
+		<ion-row style="background: #34d0dd;border-top:1px solid aqua;">
+			<ion-col col-5 class="time-location">
+				<ion-icon class="primary" name="md-pin" class="location-icon"></ion-icon> &nbsp;{{clinic.addressShot}}
+			</ion-col>
+			<ion-col col-7 class="time-location" style="    padding-top: 10px;">
+				TIMING: {{clinic.openTime}}-{{clinic.closeTime}}
+			</ion-col>
+		</ion-row>
+
+		<ion-row id="secondrow" style="background: #0072bb;">
+			<div style="width:100%;height:45px;">
+				<div style="width:50%;float:left;">
+					<p (click)="showLiveStatus = !showLiveStatus;" class="live_status">LIVE STATUS</p>
+				</div>
+				<div style="width:50%;float:right;">
+					<p class="live_status_time">LAST UPDATE: {{clinic.updatedAt | date:'hh:mm a'}}</p>
+				</div>
+			</div>
+		</ion-row>
+		
+		<ion-row *ngIf="logLength" style="background:#fff;">
+			<ion-row *ngFor="let log of logs; let i = index;" style="width:100%;background:#fff;border-bottom:2px solid #0072bb;">
+				<ion-col col-12 *ngIf="log.clinic.isOpen">
+					<b><span>{{log?.createdAt | date:'hh:mm a'}}</span></b>
+				</ion-col>
+				<ion-col col-12 *ngIf="log.clinic.isOpen">
+					<b><span style="text-transform: uppercase;">TOKEN #{{log?.booking?.number}}: {{log?.status}}</span></b>
+				</ion-col>
+			</ion-row>
+		</ion-row>
+		<ion-row id="secondrow" style="padding-left: 10px;background: #fff;">
+			<ion-col col-6>
+				<h3 style="color:#0072bb;font-size:2rem;margin: 0;">GET DIRECTIONS</h3>
+				<p style="margin:0px;font-size:1em;margin-top:3px;">{{clinic.addressFull}}</p>
+				<p class="primary-three"><a href="https://www.google.com/maps/search/?api=1&query={{clinic.addressFull}}" target="blank" style="color: #fff;
+					text-decoration: none;">>> DIRECTIONS </a></p>
+			</ion-col>
+			<ion-col col-6>
+				 <div #map id="map"></div> 
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>
+
+<ion-footer>
+	<button style="background: #0072bb;padding: 30px;" ion-button full (click)="takeAppoinment()">Book Appointment</button>
+</ion-footer>

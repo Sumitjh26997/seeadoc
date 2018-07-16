@@ -1,0 +1,68 @@
+page-appoinmentstatus {
+	.scroll {
+		height: 100%
+	}
+	#map {
+		width: 100%;
+		height: 100%;
+	}
+	.date-time{
+		margin-bottom: 15px;
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 0px;
+		color: azure;
+	  }
+	  .ellipseShape{
+		  width: 70%;
+		  background: aliceblue;
+		  padding: 5px;
+		  border-radius: 10px;
+		  text-align: center;
+		  color: darkcyan;
+		  font-weight: bold;
+	  }
+	.img-circle{
+		border-radius:100%;
+		width:90px;
+		height:85px;
+	}
+	.txtGreen{
+		color:#2f805f;
+		font-size: 2rem;
+	}
+	.circle{
+		width: 60px;
+		height: 60px;
+	}
+	#secondrow{
+		 margin-top: -7px;
+    	 margin-bottom: -5px;
+
+	}
+	.customIcon {
+		font-size: 1.7em;
+	}
+
+	.item-md ion-avatar ion-img, .item-md ion-avatar img{
+		width: 60px;
+		height: 60px;
+	}
+
+	.ion-icon{
+		padding: 5px 6px;
+		background: #2f805f;
+		color: #fff;
+		border-radius: 50%;
+	}
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+		border:none;
+	}
+	.list-ios > .item-block:first-child{
+		border:none;		
+	}
+
+	.list-ios {
+		margin: -1px 0 15px;
+	}
+}

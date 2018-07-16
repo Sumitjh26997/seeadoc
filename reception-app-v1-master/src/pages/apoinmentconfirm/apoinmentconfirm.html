@@ -1,0 +1,50 @@
+<ion-header>
+	<ion-navbar color='navbarColor' hideBackButton>
+		<ion-buttons left>
+			<button ion-button (click)="backButtonFunc()">
+				<ion-icon class="customIcon" name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title>APPOINTMENT CONFIRMED</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+	<ion-row style="background:#34d0dd;height:70%;">
+		<ion-col col-5 style="text-align:center;align-content:center;align-self:center">
+			<img [src]="bookingDetails.photo || 'assets/imgs/patientstatus.png'" width="100%" height="80px" class="img-circle">
+		</ion-col>
+		<ion-col col-7 style="align-content:center;align-self:center">
+			<p class="ellipseShape">
+			TOKEN NO: #{{bookingDetails?.number}}
+			</p>
+			<p class="date-time">DATE: {{bookingDetails?.date | date: 'dd-MMM-yyyy'}}</p>
+			<p class="date-time">TIME: {{filterTime(bookingDetails.time)}}</p>
+		</ion-col>
+		<ion-col col-12 style="text-align:center;color:aqua;font-size:1.3em;">Your appointment has been confirmed.</ion-col>
+		<ion-col col-6>
+			<button ion-button outline block class="outline-btn" (click)="confirmReschedule()" style="color: aliceblue;">Reschedule</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button outline block class="outline-btn" (click)="confirmCancel()" style="color: aliceblue;">Cancel</button>
+		</ion-col>
+	</ion-row>
+
+	<ion-grid>
+		<ion-list>
+			<ion-item>
+				<ion-avatar item-start>
+					<img src="assets/imgs/doctor.png" class="circle">
+				</ion-avatar>
+				<h3 class="txtGreen">{{doctor?.name}}</h3>
+				<p style="font-size: 1em;">{{doctor?.specialization}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-grid>
+</ion-content>
+<ion-footer style="height:40%;">
+	<div #map id="map"></div> 
+</ion-footer>
+

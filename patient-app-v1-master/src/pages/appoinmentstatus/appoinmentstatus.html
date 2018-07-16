@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar color='navbarColor'>
+		<ion-title>APPOINTMENT {{appointent.status}}</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-row style="background:#34d0dd;height:70%;">
+	<ion-col col-5 style="text-align:center;align-content:center;align-self:center">
+		<img [src]="appointent.patient.photo|| 'assets/imgs/patientstatus.png'" width="100%" height="80px" class="img-circle">
+	</ion-col>
+	<ion-col col-7 style="align-content:center;align-self:center">
+		<p class="ellipseShape">
+		TOKEN NO: #{{appointent.number}}
+		</p>
+		<p class="date-time">DATE: {{formatDate(appointent.date)}}</p>
+		<p class="date-time">TIME: {{filterTime(appointent.time)}}</p>
+	</ion-col>
+	<ion-col col-12 style="text-align:center;color:aqua;font-size:1.3em;">Your appointment has been {{appointent.status}}.</ion-col>
+	</ion-row>
+
+	<ion-grid>
+		<ion-list>
+			<ion-item>
+				<ion-avatar item-start>
+					<img [src]="appointent.doctor.photo || 'assets/imgs/doctor.png'" class="circle">
+				</ion-avatar>
+				<h3 class="txtGreen">Dr. {{appointent.doctor.name}}</h3>
+				<p style="font-size:1em;">{{appointent.doctor.specialization}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-grid>
+</ion-content>
+<ion-footer style="height:50%;">
+	<div #map id="map"></div>  
+</ion-footer>

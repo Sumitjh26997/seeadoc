@@ -1,0 +1,85 @@
+<ion-header>
+<ion-navbar color='navbarColor' hideBackButton>
+	<ion-buttons left>
+		<button ion-button (click)="backButtonFunc()">
+			<ion-icon class="customIcon" name="arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+	<ion-title>APPOINTMENT CONFIRMED</ion-title>
+</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-row class="row-one">
+		<ion-col col-12 class="thumb-icon">
+			<ion-icon name="thumbs-up" style="font-size:3em;color:#1375b5;"></ion-icon>
+		</ion-col>
+		<ion-col col-12 class="booking-message">Thank you for booking your appointment with SeeaDoc App.</ion-col>
+		<ion-row class="booking-box">
+			<ion-col col-12 class="booking-details">Details of your appointment are as follows.</ion-col>
+			<ion-col col-12 class="booking-patient">
+				<p class="patient-name">PATIENT NAME: <strong>{{common?.selectedPatient}}</strong></p>
+				<p class="booking-date">APPOINTMENT DATE: <strong>{{formatDate(bookingDetails.date)}}</strong></p>
+				<p class="booking-time">APPOINTMENT TIME: <strong>{{filterTime(bookingDetails.time)}}</strong></p>
+			</ion-col>
+		</ion-row>
+	</ion-row>
+	<ion-row style="padding:0px;margin:0px auto;margin-top:3%;">
+		<ion-col col-12 text-center style="padding:0px;margin:0px auto;">
+			<small style="width:30%;margin:auto;background: #0072bb;padding:5px 15px;color:#fff;font-size:100%;">DOCTOR DETAILS</small>
+		</ion-col>
+	</ion-row>
+	<ion-grid style="padding:0px;margin-top:1%;">
+		<ion-row id="firstrow" style="background:#34d0dd;padding-top:1%;padding-left:1%;">
+			<ion-col col-4>
+				<img [src]="doctor.photo || 'assets/imgs/doctor.png'" class="img-circle">
+			</ion-col>
+			<ion-col col-8>
+				<ion-row>
+					<ion-col col-12>
+						<h5 class="doctor-name">DR. {{doctor?.name}}</h5>
+						<p class="doctor-specialization">{{doctor?.specialization}}</p>
+						<p class="doctor-specialization">+91-{{doctor?.mobile}}</p>
+					</ion-col>
+					<ion-col col-12>
+					</ion-col>
+				</ion-row>
+			</ion-col>
+		</ion-row>
+		<ion-row id="secondrow" style="background: #0072bb;">
+			<div style="width:100%;height:45px;">
+				<div style="width:50%;float:left;">
+					<p (click)="showLiveStatus = !showLiveStatus;" class="live_status"><ion-icon class="primary" name="md-pin" class="location-icon"></ion-icon> &nbsp;{{clinic.addressShot}}</p>
+				</div>
+				<div style="width:50%;float:right;">
+					<p class="live_status_time">TIMING: {{clinic?.openTime}}-{{clinic?.closeTime}}</p>
+				</div>
+			</div>
+		</ion-row>
+		<ion-row id="secondrow" style="padding-left: 10px;background: #fff;">
+			<ion-col col-6>
+				<h3 style="color:#0072bb;font-size:2rem;margin: 0;">GET DIRECTIONS</h3>
+				<p style="margin:0px;font-size:1em;margin-top:3px;">{{clinic?.addressFull}}</p>
+				<p class="primary-three"><a href="https://www.google.com/maps/search/?api=1&query={{clinic.addressFull}}" target="blank" style="color: #fff;
+					text-decoration: none;">>> DIRECTIONS </a></p>
+			</ion-col>
+			<ion-col col-6>
+					<div #map id="map"></div> 
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>
+
+<ion-footer style="background: #0072bb;">
+	<ion-row>
+		<ion-col col-6 (click)="confirmReschedule()" style="border-right:1px solid #fff;">
+				<h3 style="text-align:center !important;color:#fff;text-transform:uppercase;">Reschedule</h3>
+		</ion-col>
+		<ion-col col-6 (click)="confirmCancel()">
+				<h3 style="text-align:center !important;color:#fff;text-transform:uppercase;">Cancel</h3>
+		</ion-col>
+	</ion-row>
+	
+</ion-footer>

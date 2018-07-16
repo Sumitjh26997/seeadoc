@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar hideBackButton>
+		<ion-buttons left>
+			<button ion-button (click)="backButtonFunc()">
+				<ion-icon class="customIcon" name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title>Schedule</ion-title>
+	</ion-navbar>
+</ion-header>
+<!-- <ion-content>
+	<ion-list>
+		<ion-item class="slots" *ngFor="let slot of slots">
+			<h2>{{slot.start}} - {{slot.end}}</h2>
+			<p>{{bookings[slot._id] ? bookings[slot._id].length: '0'}} in Queue</p>
+			<button ion-button item-end class="book-btn" (click)="presentConfirm(slot)" small>Book</button>
+
+		</ion-item>
+	</ion-list>
+</ion-content> -->
+<ion-content class="content">
+<ion-card *ngFor="let slot of slots">
+	<ion-card-content>
+	<ion-row *ngIf="!bookings[slot._id] || (common.user.queueCount > bookings[slot._id].length)">
+		<ion-col col-8 class="col-8-full">
+		<h2 class="time">{{filterTime1(slot?.start)}} - {{filterTime2(slot?.end)}}</h2>
+		<p class="unavailable">{{bookings[slot._id] ? bookings[slot._id].length : '0'}} In QUEUE</p>
+		</ion-col>
+		<ion-col col-4 class="col-4-full" (click)="presentConfirm(slot)">
+		<h2 class="seats">BOOK</h2>
+		</ion-col>
+	</ion-row>
+	<ion-row *ngIf="bookings[slot._id] && (common.user.queueCount == bookings[slot._id].length)">
+		<ion-col col-8 class="col-8-full" id="col-8-full">
+		<h2 class="time" id="time">{{filterTime1(slot?.start)}} - {{filterTime2(slot?.end)}}</h2>
+		<p class="unavailable" id="time">SLOT UNAVAIABLE</p>
+		</ion-col>
+		<ion-col col-4 class="col-4-full" id="col-4-full">
+		<h2 class="seats">FULL</h2>
+		</ion-col>
+	</ion-row>
+	</ion-card-content>
+</ion-card>
+</ion-content>

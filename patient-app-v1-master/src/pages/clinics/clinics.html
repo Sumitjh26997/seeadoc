@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-navbar color='navbarColor' text-center>
+		<ion-title>CLINICS</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-searchbar (ionInput)="getClinic($event)" text-left placeholder="Search for clinics, location"></ion-searchbar>
+
+	<ion-list>
+		<div *ngFor="let clinic of clinicsList">
+			<ion-item *ngFor="let doctor of clinic.doctors"  class="clinic-list" text-left>
+				<ion-row>
+					<ion-col col-2>
+						<div class="doctor-image" style="border-radius:50%;width:40px;height:40px;"><img [src]="doctor.photo || 'assets/imgs/doctor.png'" style="width: 100%;
+							height: 100%;
+							border-radius: 50%"></div>
+					</ion-col>
+					<ion-col col-6>
+						<h2 style="padding:0px;margin:0px;text-transform:uppercase;font-size:1.3rem;color: #000;font-weight:500;">DR. {{doctor.name}}</h2>
+						<p style="padding:0px;margin:0px;text-transform:capitalize;font-size:1.3rem;color: #000;font-weight:500;">{{doctor.specialization}}</p>
+						<p style="padding:0px;margin:0px;text-transform:capitalize;color:#34d0dd;font-size: 1.3rem;font-weight:500;">{{clinic.addressShot}}</p>
+					</ion-col>
+					<ion-col col-4 style="padding: 0px;">
+						<button ion-button class="book-btn" (click)="selectClinic(clinic, doctor)">Book</button>
+					</ion-col>
+				</ion-row>
+				
+			</ion-item>
+		</div>
+		<ion-item (click)="suggestDoctor()" class="clinic-list" style="text-align:center;padding:5px 0px 5px 10px;">
+			<b>Clinic not found, Suggest Doctor?</b>
+			<img src="assets/imgs/suggest.png" class="suggest-img">
+		</ion-item>
+	</ion-list>
+</ion-content>

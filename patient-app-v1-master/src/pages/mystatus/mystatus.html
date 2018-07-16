@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <ion-title>
+      <ion-row>
+        <ion-col col-5 style="text-align:right;">
+          <img src="assets/imgs/doctor.png" class="circle">
+        </ion-col>
+        <ion-col col-7 class="header-text" style="text-align:left;padding-top:3%;">
+          <p class="doctor-name">Dr. {{bookingDetails.doctor.name}}</p>
+          <p>{{bookingDetails.doctor.specialization}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-row style="background:#34d0dd;height:50%;">
+    <ion-col col-5 style="text-align:center;align-content:center;align-self:center">
+      <img [src]="bookingDetails.patient.photo || 'assets/imgs/patientstatus.png'" width="100%" height="80px" class="img-circle">
+    </ion-col>
+    <ion-col col-7 style="align-content:center;align-self:center">
+      <p class="ellipseShape">
+        Current Position: #{{bookingDetails.position-1}}
+      </p>
+      <p class="date-time">DATE: {{formatDate(bookingDetails.date)}}</p>
+      <p class="date-time">TIME: {{filterTime(bookingDetails.time)}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background:#34d0dd;">
+    <ion-col col-6>
+      <button ion-button outline block class="outline-btn" (click)="confirmReschedule()" style="color: aliceblue;">Reschedule</button>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button outline block class="outline-btn" (click)="confirmCancel()" style="color: aliceblue;">Cancel</button>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-grid style="padding: 0px;">
+    <ion-row id="secondrow">
+      <ion-col style="padding: 0px;">
+        <button ion-button full class="button-shadow green-btn" (click)="showLiveStatus = !showLiveStatus;">
+          <div style="width:30%;text-align:left;">Live Status</div>
+          <div style="width:70%;text-align:right;font-size: 0.8em;
+          padding-top: 1%;">Last Updated: {{bookingDetails?.updatedAt  | date:'hh:mm a'}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <div *ngIf="logLength">
+      <ion-row *ngFor="let log of logs; let i = index;">
+        <ion-col col-9 *ngIf="log.clinic.isOpen">
+          <b style="text-transform:uppercase;">TOKEN #{{log?.booking?.number}}: {{log?.status}}</b>
+        </ion-col>
+        <ion-col col-12 *ngIf="!log.clinic.isOpen">
+          #Doctor is yet not come to clinic
+        </ion-col>
+        <ion-col col-3 text-right *ngIf="log.clinic.isOpen">
+          <b>{{log?.createdAt | date:'hh:mm a'}}</b>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="!logLength">
+      <ion-row>
+        <ion-col col-12>
+          <span><b>#</b> Doctor is yet to arrive.</span>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row id="secondrow" style="padding: 0px;">
+      <ion-col col-12 style="padding: 0px;">
+        <button ion-button full class="button-shadow green-btn">Location Map</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer style="height:40%;">
+  <div #map id="map"></div>
+</ion-footer>

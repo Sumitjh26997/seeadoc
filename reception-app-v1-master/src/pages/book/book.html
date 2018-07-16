@@ -1,0 +1,39 @@
+<ion-header id="tab-header">
+	<ion-navbar>
+		<ion-title text-center>Book A Appointment</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-list>
+		<ion-item>
+			<h2>5:00 PM - 5:15 PM</h2>
+			<p>2 in Queue</p>
+			<button ion-button item-end round (click)="presentConfirm()" small>Book</button>
+		</ion-item>
+		<ion-item>
+			<h2>5:15 PM - 5:30 PM</h2>
+			<p>3 in Queue</p>
+			<button ion-button item-end round (click)="presentConfirm()" small>Book</button>
+		</ion-item>
+		<ion-item>
+			<h2>5:30 PM - 5:45 PM</h2>
+			<p>Queue is full</p>
+			<button ion-button item-end round (click)="presentSorryAlert()" color="light" small>Book</button>
+		</ion-item>
+		<ion-item>
+			<h2>5:45 PM - 6:00 PM</h2>
+			<p>2 in Queue</p>
+			<button ion-button item-end round (click)="presentConfirm()" small>Book</button>
+		</ion-item>
+		<ion-item>
+			<h2>6:00 PM - 6:15 PM</h2>
+			<p>Queue is full</p>
+			<button ion-button item-end round (click)="presentSorryAlert()" color="light" small>Book</button>
+		</ion-item>
+		<ion-item>
+			<h2>6:15 PM - 6:30 PM</h2>
+			<p>1 in Queue</p>
+			<button ion-button item-end round (click)="presentConfirm()" small>Book</button>
+		</ion-item>
+	</ion-list>
+</ion-content>

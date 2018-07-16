@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title text-center>APPOINTMENT HISTORY</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content refreshingSpinner="circles" refreshingText="Refreshing...">
+		</ion-refresher-content>
+	</ion-refresher>
+	<div class="main-div" *ngIf="length">
+		<div class="history" *ngFor="let appointment of appointments">
+			<ion-card>
+				<ion-card-content>
+					<ion-row class="row-one" (click)="gotoAppoinmentStatus(appointment)">
+						<ion-col><p class="token">TOKEN #{{appointment.number}}</p></ion-col>
+						<ion-col><p class="time">{{formatDate(appointment.date)}} | {{filterTime(appointment.time)}}</p></ion-col>
+					</ion-row>
+					<ion-row (click)="gotoAppoinmentStatus(appointment)">
+						<ion-col col-7 style="padding:10px 5px;">
+							<h4 class="doctor-name-left"><strong style="text-transform:uppercase;">DR. {{appointment.doctor.name}}</strong></h4>
+							<p class="doctor-type-left" style="text-transform:capitalise;">{{appointment.doctor.specialization}}</p>
+						</ion-col>
+						<ion-col col-5 style="padding:10px 5px;">
+							<h4 class="doctor-name-right"><strong style="text-transform:uppercase;">PATIENT NAME</strong></h4>
+							<p class="doctor-type-right" style="text-transform:capitalise;">{{appointment.patient.name}}</p>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col *ngIf="appointment.status=='cancelled'" style="background:#ff5555;"><p class="status">STATUS: {{appointment.status}}</p></ion-col>
+						<ion-col *ngIf="appointment.status=='closed'" style="background:#29b3ca;"><p class="status">STATUS: {{appointment.status}}</p></ion-col>
+						<ion-col style="background:#0072bb;" (click)="gotofeedback(appointment)"><p class="feedback">FEEDBACK</p></ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+			<br>
+		</div>
+	</div>
+	<ion-row class="image-row" *ngIf="!length">
+		<ion-col class="image-col" col-12><img src="assets/imgs/patientstatus.png"></ion-col>
+		<ion-col class="image-text" col-12>Your appointment's history appears here !</ion-col>
+	</ion-row>
+</ion-content>

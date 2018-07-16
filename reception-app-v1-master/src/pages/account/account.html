@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color='navbarColor'>
+		<ion-title text-center>MY ACCOUNT</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-row id="firstrow" style="background:#34d0dd;padding:1%;">
+		<ion-col col-5>
+			<img src="assets/imgs/doctor.png" class="img-circle">
+		</ion-col>
+		<ion-col col-7>
+			<ion-row>
+				<ion-col col-12 style="padding:5px 0px 0px 10px;">
+					<h5 class="doctor-name">{{data?.name}}</h5>
+					<p class="doctor-specialization">+91-{{data?.mobile}}</p>
+					<p class="doctor-specialization">{{data?.email}}</p>
+				</ion-col>
+				<ion-col col-12 style="padding:5px 0px 0px 10px;">
+					<button ion-button class="primary-one" (click)="presentConfirm()">Log Out</button>
+				</ion-col>
+			</ion-row>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<button ion-button class="primary-two" (click)="bookingHistory()"><ion-icon name="home"></ion-icon> <span style="padding-left:5% !important;padding-top:2% !important;padding-right:4% !important;">Appointment History</span></button>
+		</ion-col>
+	</ion-row>
+</ion-content>

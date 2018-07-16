@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Schedule</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+	<div *ngFor="let slot of slots">
+		<ion-card *ngIf="hideBooking(slot.start)">
+		  	<ion-card-content>
+				<ion-row *ngIf="!bookings[slot._id] || (common.user.queueCount > bookings[slot._id].length)">
+					<ion-col col-8 class="col-8-full">
+					<h2 class="time">{{filterTime1(slot?.start)}} - {{filterTime2(slot?.end)}}</h2>
+					<p class="unavailable">{{bookings[slot._id] ? bookings[slot._id].length : '0'}} In QUEUE</p>
+					</ion-col>
+					<ion-col col-4 class="col-4-full" (click)="presentConfirm(slot)">
+					<h2 class="seats">BOOK</h2>
+					</ion-col>
+				</ion-row>
+				<ion-row *ngIf="bookings[slot._id] && (common.user.queueCount == bookings[slot._id].length)">
+					<ion-col col-8 class="col-8-full" id="col-8-full">
+					<h2 class="time" id="time">{{filterTime1(slot?.start)}} - {{filterTime2(slot?.end)}}</h2>
+					<p class="unavailable" id="time">SLOT UNAVAIABLE</p>
+					</ion-col>
+					<ion-col col-4 class="col-4-full" id="col-4-full">
+					<h2 class="seats">FULL</h2>
+					</ion-col>
+				</ion-row>
+		  	</ion-card-content>
+	<!-- 		<ion-card-content *ngIf="!hideBooking(slot.start)">
+				<ion-row *ngIf="!bookings[slot._id] || (common.user.queueCount > bookings[slot._id].length)">
+					<ion-col col-8 class="col-8-full" id="col-8-full">
+						<h2 class="time" id="time">{{filterTime1(slot?.start)}} - {{filterTime2(slot?.end)}}</h2>
+						<p class="unavailable" id="time">TIME OVER</p>
+						</ion-col>
+						<ion-col col-4 class="col-4-full" id="col-4-full">
+						<h2 class="seats">MISSED</h2>
+					</ion-col>
+				</ion-row>
+			</ion-card-content> -->
+		</ion-card>
+	</div>
+  </ion-content>

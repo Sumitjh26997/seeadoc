@@ -1,0 +1,14 @@
+page-locations {
+    .content{
+        background: linear-gradient(to bottom,#34d0dd, #28acc3);
+        margin-top: 5%;
+    }
+    ion-list.list.list-md {
+        width: 90%;
+        margin: auto;
+    }
+    ion-item.item.item-block.item-md.item-radio {
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+}

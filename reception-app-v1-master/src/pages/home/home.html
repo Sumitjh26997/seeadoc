@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Today's Appointments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+  <div class="main-div" *ngIf="length">
+    <div class="history" *ngFor="let appointment of appointments; let i = index">
+      <ion-card>
+        <ion-card-content>
+          <ion-row class="row-one">
+            <ion-col><p class="token">TOKEN #{{appointment?.number}}</p></ion-col>
+            <ion-col><p class="time">SEQUENCE #{{appointment?.sequence}}</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 style="padding:10px 5px;">
+              <h4 class="doctor-name-left"><strong style="text-transform:uppercase;">DR. {{appointment.doctor?.name}}</strong></h4>
+              <p class="doctor-type-left" style="text-transform:capitalise;">{{appointment.doctor?.specialization}}</p>
+            </ion-col>
+            <ion-col col-5 style="padding:10px 5px;">
+              <h4 class="doctor-name-right"><strong style="text-transform:uppercase;">PATIENT NAME</strong></h4>
+              <p class="doctor-type-right" style="text-transform:capitalise;">{{appointment.patient?.name}}</p>
+              <p class="doctor-type-right" style="text-transform:capitalise;">{{appointment.patient?.mobile}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 style="background:#ff5555;"><p class="status">TIME: {{filterTime1(appointment.slot?.start)}} - {{filterTime2(appointment.slot?.end)}}</p></ion-col>
+            <ion-col col-5 style="background:#0072bb;" (click)="consulting(appointment, i)"><p class="feedback">{{appointment?.status}} </p></ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <br>
+    </div>
+  </div>
+  <ion-row class="image-row" *ngIf="!length">
+    <ion-col class="image-col" col-12><img src="assets/imgs/patientstatus.png"></ion-col>
+    <ion-col class="image-text" col-12>Your today's appointment appears here !</ion-col>
+  </ion-row>
+</ion-content>

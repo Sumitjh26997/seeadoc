@@ -1,0 +1,201 @@
+page-apoinmentconfirm {
+		
+	#map {
+		width: 100%;
+		height: 100%;
+	}
+	.img-circle{
+		background: #fff;
+		border-radius: 10px;
+		max-width: 90%;
+	}
+	.doctor-name{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.button-shadow{
+		font-size: 12px;
+		border-radius: 20px;
+	}
+	.button-shadow-1{
+		font-size: 12px;
+		border-radius: 20px;
+	}
+	.button-shadow-2{
+		font-size: 12px;
+	}
+	.button-inner {
+		font-size: 1.3em;
+	}
+
+	.location-icon{
+		background: transparent;
+		font-size: 1em;
+		padding: 4px 0px;
+	}
+	.live_status{
+		text-align: left;
+		padding: 13px 8px 0px;
+		color: aqua;
+		width: 100%;
+		font-size: 0.9em;
+		margin: 0;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.live_status_time{
+		text-align: left;
+		padding: 13px 8px 0px;
+		color: aqua;
+		width: 100%;
+		font-size: 0.9em;
+		margin: 0;
+		font-weight: bold;
+		padding-left: 0px;
+		text-transform: uppercase;
+	}
+	.time-location{
+		color:aqua;
+		text-transform: uppercase;
+	}
+	.primary-one{
+		color: cadetblue;
+		background: #fff;
+		padding: 5px 10px;
+		border-radius: 10px;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+		text-transform: uppercase;
+		margin-bottom: 3px;
+		font-weight: 500;
+	}
+	.doctor-name{
+		text-transform: uppercase;
+		font-size: 1.2em;
+		color: darkslateblue;
+	}
+	.doctor-specialization{
+		text-transform: uppercase;
+		font-size: 1em;
+		color: aqua;
+		margin: 0;
+		padding-top: 3px;
+	}
+	.primary-three{
+		background: #0072bb;
+		color: aqua;
+		padding: 5px 10px;
+		border-radius: 10px;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+		text-transform: uppercase;
+		margin-bottom: 3px;
+		font-weight: 500;
+		margin-top: 5px;
+	}
+
+	ion-row.row-one.row {
+		background: #fff;
+		text-align: center;
+		padding: 2%;
+	}
+
+	ion-col.booking-message.col {
+		margin: auto;
+		padding: 0% 10%;
+		color: #0072bb;
+		font-weight: 500;
+		padding-bottom: 3%;
+    	padding-top: 1%;
+	}
+	ion-row.booking-box.row {
+		width: 85%;
+		margin: auto;
+		border: 1px solid #0072bb;
+		color: #0072bb;
+    	font-weight: 500;
+	}
+	ion-col.booking-details.col {
+		border-bottom: 2px solid #0072bb;
+		padding: 5px;
+		padding-left: 10px;
+	}
+	.patient-name, .booking-date, .booking-time{
+		margin: 0px;
+		padding-bottom: 1%;
+		text-align: left;
+	}
+	ion-col.booking-patient.col {
+		padding-left: 10px;
+	}
+	// #map {
+	// 	width: 100%;
+	// 	height: 100%;
+	// }
+	// .button-shadow-2{
+	// 	border-radius: 50%;
+	// 	padding: 0 2.6rem;
+	// 	position: fixed;
+	// 	right: 1%;
+	// 	top: 13%;
+	// 	width:75px;
+	// }
+	// .date-time{
+	// 	margin-bottom: 15px;
+	// 	font-size: 1.2em;
+	// 	font-weight: bold;
+	// 	margin: 0px;
+	// 	color: azure;
+	//   }
+	//   .ellipseShape{
+	// 	  width: 70%;
+	// 	  background: aliceblue;
+	// 	  padding: 5px;
+	// 	  border-radius: 10px;
+	// 	  text-align: center;
+	// 	  color: darkcyan;
+	// 	  font-weight: bold;
+	//   }
+	// .img-circle{
+	// 	border-radius:100%;
+	// 	width:90px;
+	// 	height:85px;
+	// }
+	// .txtGreen{
+	// 	color:#2f805f;
+	// 	font-size: 1.5em;
+	// }
+	// .circle{
+	// 	width: 60px;
+	// 	height: 60px;
+	// }
+	// #secondrow{
+	// 	 margin-top: -7px;
+    // 	 margin-bottom: -5px;
+
+	// }
+	// .customIcon {
+	// 	font-size: 1.7em;
+	// }
+
+	// .item-md ion-avatar ion-img, .item-md ion-avatar img{
+	// 	width: 60px;
+	// 	height: 60px;
+	// }
+
+	// .ion-icon{
+	// 	padding: 5px 6px;
+	// 	background: #2f805f;
+	// 	color: #fff;
+	// 	border-radius: 50%;
+	// }
+
+	// .outline-btn {
+	// 	font-size: 12px;
+	// 	border: none;
+	// 	box-shadow: 0px 0px 2px grey;
+	// 	height: 25px;
+	// }
+}

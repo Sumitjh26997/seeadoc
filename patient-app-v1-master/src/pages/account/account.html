@@ -1,0 +1,63 @@
+<ion-header>
+	<ion-navbar color='navbarColor'>
+		<ion-title text-center>MY ACCOUNT</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-row id="firstrow" style="background:#34d0dd;padding:1%;">
+		<ion-col col-5>
+			<img [src]="common.user.photo || 'assets/imgs/doctor.png'" class="img-circle">
+		</ion-col>
+		<ion-col col-7>
+			<ion-row>
+				<ion-col col-12 style="padding:5px 0px 0px 10px;">
+					<h5 class="doctor-name">{{common.user.name}}</h5>
+					<p class="doctor-specialization">+91-{{common.user.mobile}}</p>
+					<p class="doctor-specialization">{{common.user.email}}</p>
+				</ion-col>
+				<ion-col col-12 style="padding:5px 0px 0px 10px;">
+					<button ion-button class="primary-one" (click)="presentConfirm()">Log Out</button>
+				</ion-col>
+			</ion-row>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<button ion-button class="primary-two" (click)="addMember()"><ion-icon name="add"></ion-icon> <span style="padding-left:5%;padding-top:2%;">Add Patient</span></button>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<ion-card *ngFor="let patient of patients">
+				<ion-card-content>
+					<div style="text-align:left;width:50%;float:left;"><p>{{patient.name}}</p></div>
+					<div style="text-align:right;width:50%;float:right;"><p>+91-{{patient.mobile}}</p></div>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+	<ion-row style="margin-top:10%;">
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<ion-card>
+				<ion-card-content>
+					<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant">Contact US</a>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<ion-card>
+				<ion-card-content>
+					<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant">Rate US</a>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+		<ion-col col-12 style="padding:3px 0px 0px 5px;">
+			<ion-card>
+				<ion-card-content>
+					<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant">Privacy Policy</a>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+</ion-content>

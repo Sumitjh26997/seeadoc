@@ -1,0 +1,63 @@
+page-tommorow {
+    .toolbar-background-md {
+        border-color:#35ddde;
+        background: #35ddde;
+        color:#fff;
+    }
+    .toolbar-title-md {
+        color: aliceblue;
+    }
+    .content{
+        background: #34d0dd;
+    }
+    .card.card-md {
+        width: 90%;
+        margin: auto;
+        margin-top: 3%;
+        border-radius: 15px;
+    }
+    .card-content-md {
+        padding: 0px;
+    }
+    .col-8-full.col {
+        padding: 8px 5px;
+    }
+    .time{
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+    }
+    .unavailable{
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+    .col-4-full{
+        background: #0072bb;
+    }
+    .seats{
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 18%;
+    }
+
+
+    #col-4-full{
+        background: #cecece;
+    }
+    #time, #unavailable{
+        color: #dedede;
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: aliceblue;
+        background-color: transparent;
+        font-size: 2em;
+    }
+    .alert-md .alert-message, .alert-md .alert-input-group {
+        padding: 20px 20px 0px !important;
+        text-align: center;
+    }
+}

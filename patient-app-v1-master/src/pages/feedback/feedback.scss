@@ -1,0 +1,54 @@
+page-feedback {
+	.content{
+        background: linear-gradient(to bottom, #34d0dd, #28acc3);
+    }
+	.button-md 
+	{
+    	height: 2.6rem;
+    	font-size: 1.2rem;
+    }
+    #rate{
+    	margin: 8px 8px -4px 0px;
+	}
+	.remark{
+		border-top: 1px solid grey;
+		padding-top:10px;
+	}
+	.remark ion-textarea{
+		padding: 4px 13px;
+	}
+	.row-one, .row-two, .row-three, .row-four {
+    	background: #fff;
+    	border-radius: 10px;
+	    margin-top: 5%;
+	}
+	.row-four{
+		width: 35%;
+		margin: auto;
+		margin-top: 5%;
+		padding: 5px 10px;
+		background: #fff;
+		color: #000;
+	}
+	.feedback-button {
+		background: transparent;
+		color: #000;
+		font-weight: bold;
+		text-align: center;
+	}
+	.col {
+    	text-align: center;
+	}
+	.row-one {
+    	padding: 0px 5px 10px 5px;
+	}
+	
+	.small-text{
+		font-size: 100%;
+		font-weight: bold;
+		width: 100%;
+		text-align: right;
+		padding-right: 1%;
+		padding-top: 2%;
+	}
+}

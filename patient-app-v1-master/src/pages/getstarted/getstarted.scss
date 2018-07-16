@@ -1,0 +1,65 @@
+page-getstarted {
+
+    .content-background{
+        background: linear-gradient(to bottom, #28acc3, #035ba8);
+    }
+    .logo{
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 35%;
+        margin-bottom: 30%;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 0px 10px #ffffff;
+    }
+    img{
+        filter: brightness(1) invert(1);
+    }
+    .h4{
+        color: #fff;
+        font-weight: 400;
+    }
+    .p{
+        color: #fff;
+        margin-top: 0px;
+        font-weight: 50;
+        font-size: 0.8em;
+        padding: 0px 1em;      
+    }
+    .button{
+        background: #fff;
+        color: #000;
+    }
+    .button-md {
+        height: 4rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+   ion-slides{
+       min-height:150px;
+       height: 150px;
+   }
+    .swiper-pagination-bullet-active {
+        background: #fff;
+        opacity: 1 !important;
+    }
+    .swiper-pagination-bullet{
+        background: #fff;
+        opacity: 0.5;
+        height: 10px;
+        width: 10px;
+        top: 85%;
+        bottom: 0px;
+        z-index: 999999;
+    }
+    .hide{
+        display: block !important;
+    }
+    ion-footer{
+        height:18%;
+    }
+    .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        height: 0px !important;
+    }
+}

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <ion-title>Pick Your City</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list radio-group>
+    <ion-item *ngFor="let location of locations;">
+      <ion-label>{{location.town}}</ion-label>
+      <ion-radio [checked]="(location?.town === selectedLocation?.town) ? true : false" [value]="location.town" (click)="selectLocation(location)"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

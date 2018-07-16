@@ -1,0 +1,22 @@
+<ion-content>
+	<div class="logo-container">
+		<img src="assets/imgs/sd-logo.png">
+	</div>
+	<div class="login-box">
+		<form #suggestionForm="ngForm" (submit)="addMember()">
+			<p>Enter Patient Name</p>
+			<input type="text" name="name" [(ngModel)]="user.name" required>
+			<p>Enter Patient Mobile Number</p>
+			<input type="tel" name="mobile" minlength="10" maxlength="10" [(ngModel)]="user.mobile" required>
+			<ion-row>
+				<ion-col col-12 text-center>
+					<button ion-button>Add Member</button>
+				</ion-col>
+			</ion-row>
+		</form>
+	</div>
+</ion-content>
+<ion-footer>
+	<button ion-button button-full class="suggest-back-button" (click)="goback()">Back</button>
+</ion-footer>
+	

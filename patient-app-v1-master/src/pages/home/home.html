@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color='headerColor'>
+    <ion-title text-center>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="row-one">
+    <h2 class="see-a-doctor">SEE A DOCTOR...</h2>
+    <button class="location-icon" (click)="autodetect()"><ion-icon name="locate"></ion-icon> AUTO DETECT</button>
+    <ion-item class="select-item">
+      <ion-input type="text" text-left placeholder="ENTER AREA / LOCALITY" name="location_name" [(ngModel)]="location_name" (click)="gotoLocationPage()" readonly></ion-input>
+    </ion-item>
+  </ion-row>
+
+  <ion-card (click)="gotoClinicPage()">
+    <ion-card-header>
+      <div class="hospital"><img src="assets/imgs/hospital.png"></div>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="search-doctor">SEARCH DOCTOR</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="gotoSuggestedDoctorPage()">
+    <ion-card-header>
+      <div class="doctor"><img src="assets/imgs/doctor.png"></div>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="suggest-doctor">SUGGEST DOCTOR</h2>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

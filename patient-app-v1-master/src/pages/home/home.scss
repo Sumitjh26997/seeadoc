@@ -1,0 +1,103 @@
+page-home{
+    .scroll-content{
+        overflow-y: hidden;
+    }
+
+    .toolbar-background-md {
+        border-color:#35ddde;
+        background: #35ddde;
+        color:#fff;
+    }
+    .toolbar-title-md {
+        color: aliceblue;
+    }
+    .row-one{
+        height:40%;
+        background: #34d0dd;
+    }
+    .see-a-doctor{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+        opacity: 0.7;
+        font-weight: bold;
+        padding-top: 5%;
+    }
+    .item-md {
+        padding-left: 10px;
+    }
+  
+    .placeholder-text{
+        color: red;
+        font-size: 1.2em;
+    }
+    .location-icon{
+        background-color: #ed1a21;
+        position: relative;
+        right: -62%;
+        top: 4%;
+        height: 25px;
+        z-index: 99;
+        font-size: 12px;
+        border-radius: 10px;
+        padding: 5px 5px;
+    }
+    .text-input-md {
+        text-align: right;
+        margin:0px;
+    }
+    .label-md{
+        margin:0px;
+        color: #34d0dd;
+    }
+    .select-md{
+        width: 95%;
+        max-width: 95%;
+        padding: 0 8px 0px 16px;
+    }
+  
+    .select-item{
+        width: 85%;
+        margin: 5px auto;
+        font-size: 12px;
+        height: 40px;
+        min-height: 40px !important;
+        position: relative;
+        bottom: 25%;
+    }
+    .hospital {
+        width: 25%;
+        margin: auto;
+    }
+    .doctor {
+        width: 25%;
+        margin: auto;
+    }
+    .search-doctor, .suggest-doctor{
+        font-weight: 900;
+        text-align: center;
+    }
+    .card-md {
+        height: 30%;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 8%;
+        border-radius: 5px;
+        position: relative;
+        top: -10%;
+        background: #fff;
+        box-shadow: 0px 0px 20px #ccc;
+    }
+    @media only screen and (max-width:300px){
+        .location-icon {
+            right: -53%;
+            top: 5%;
+        }
+        .see-a-doctor {
+            padding-top: 2%;
+        }
+        .text-input-md {
+            font-size: 0.8em;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-navbar color='navbarColor'>
+		<ion-title>Feedback</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-row radio-group [(ngModel)]="satisfy" name="satisfy" class="row-one">
+		<ion-col col-12>
+			<p style="margin-bottom:0px;">Are You satisfied with the consultation ?</p>
+		</ion-col>
+		<ion-col style="padding:0px" col-6>
+			<ion-item no-lines>
+				<ion-label>Yes</ion-label>
+				<ion-radio value="yes"></ion-radio>
+			</ion-item>
+		</ion-col>
+		<ion-col style="padding:0px" col-6>
+			<ion-item no-lines>
+				<ion-label>No</ion-label>
+				<ion-radio value="no"></ion-radio>No
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row class="row-two">
+		<ion-col col-12>
+			Rate Doctor
+			<ion-rating [leitura]="false" (ionClick)="log($event)"></ion-rating>
+		</ion-col>
+	</ion-row>
+	<ion-row class="row-three">
+		<ion-textarea placeholder="Any Recommendation ?" minlength="0" maxlength="500" [(ngModel)]="remark"></ion-textarea>
+	</ion-row>
+	<ion-row>
+		<small class="small-text">500 Characters Only</small>
+	</ion-row>
+	<ion-row class="row-four">
+		<ion-col col-12>
+			<button class="feedback-button" (click)="sendFeedback()">
+				SUBMIT
+			</button>
+		</ion-col>
+	</ion-row>
+</ion-content>

@@ -1,0 +1,77 @@
+page-livefeed {
+    .toolbar-background-md {
+        background: #35ddde;
+        color:#fff;
+    }
+    .toolbar-title-md {
+        color: aliceblue;
+    }
+    .content{
+        background: #34d0dd;
+        margin-top: 5%;
+    }
+    .image-row{
+        position: relative;
+        top: 15%;
+    }
+    .image-col{
+        max-width: 50%;
+        margin: auto;
+        align-content: center;
+    }
+    .image-text{
+        text-align: center;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    ion-card.card.card-md {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 90%;
+        margin: auto;
+        border:0px;
+        margin-top: 4px;
+    }
+    .card-content-md {
+        padding: 0px;
+    }
+    .token-span{
+        background:  #0072bb;
+        color: #fff;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding: 5px 15px 5px 15px;
+        position: relative;
+        left: 5%;
+        font-size: 0.8em;
+    }
+    .doctor-name-left{
+        padding-left: 5%;
+        text-align: left;
+    }
+    .doctor-name-right{
+        padding-right: 5%;
+        text-align: right;
+    }
+    .doctor-type-left{
+        color:#35ddde;
+        padding-left: 5%;
+        text-align: left;
+    }
+    .doctor-type-right{
+        color:#35ddde;
+        padding-right: 5%;
+        text-align: right;
+    }
+    .time{
+        width: 100%;
+        padding: 3px;
+        text-align: center;
+    }
+    .line{
+        width: 100%;
+        height: 1px;
+        background: #35ddde;;
+    }
+}
