@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"test.User"},{"v":2,"unique":true,"key":{"mobile":1},"name":"mobile_1","ns":"test.User","background":true},{"v":2,"key":{"email":1},"name":"email_1","ns":"test.User","background":true}],"uuid":"1c189bf4aa9643d6862682555624864b"}
