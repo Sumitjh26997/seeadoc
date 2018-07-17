@@ -20,6 +20,12 @@ export class DoctorsPage {
   doctor = null;
   logs = null;
   logLength = 0;
+  date=new Date();
+  day=this.date.getDay();
+  weekday:string[]= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  today=this.weekday[this.day];
+  open=null;
+  close=null;
 
   constructor(public navCtrl: NavController,  public loadingCtrl: LoadingController, public platform: Platform,
     public navParams: NavParams, private alertCtrl: AlertController,
@@ -32,8 +38,18 @@ export class DoctorsPage {
     }
     this.clinic = JSON.parse(localStorage.getItem('clinic'));
     this.doctor = JSON.parse(localStorage.getItem('doctor'));
+    if(this.day==0)
     console.log(this.doctor);
     console.log(this.clinic);
+    console.log(this.day);
+    console.log(this.weekday[0]);
+    console.log(this.weekday[1]);
+    console.log(this.weekday[2]);
+    console.log(this.weekday[3]);
+    console.log(this.weekday[4]);
+    console.log(this.weekday[5]);
+    console.log(this.weekday[6]);
+    console.log(this.today);
     this.presentAlert();
     this.fetchLogs();
   }
