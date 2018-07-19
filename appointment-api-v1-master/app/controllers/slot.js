@@ -63,13 +63,15 @@ function updateSlot(req, res, next) {
 }
 
 function fetchSlot(req, res, next) {
+    let date = new Date();
+    let today = date.getDay();// get current day and query against it
     let query = req.body.query || {};
     console.log('Quesry', query);
     BOOKING.find(query, (err, bookings) => {
         if (err) throw err;
         bookings = _.groupBy(bookings, 'slot');
         // console.log('Bookings', bookings);
-        Slot.find({ clinic: query.clinic }, (err, slots) => {
+        Slot.find({ clinic: query.clinic , day:today}, (err, slots) => {
             if (err) throw err;
             res.status(200);
             return res.json({

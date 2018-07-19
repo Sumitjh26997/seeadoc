@@ -16,6 +16,9 @@ export class TodayPage {
 
   slots = null;
   bookings = null;
+  date = new Date();
+  day = this.date.getDay();
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private alertCtrl: AlertController,
     public api: Api,

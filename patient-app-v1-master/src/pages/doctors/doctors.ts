@@ -20,12 +20,12 @@ export class DoctorsPage {
   doctor = null;
   logs = null;
   logLength = 0;
-  date=new Date();
-  day=this.date.getDay();
-  weekday:string[]= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  today=this.weekday[this.day];
-  open=null;
-  close=null;
+  date = new Date();
+  day = this.date.getDay();
+  weekday:string[] = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  today = this.weekday[this.day];
+  open = null;
+  break = null;
 
   constructor(public navCtrl: NavController,  public loadingCtrl: LoadingController, public platform: Platform,
     public navParams: NavParams, private alertCtrl: AlertController,
@@ -38,7 +38,42 @@ export class DoctorsPage {
     }
     this.clinic = JSON.parse(localStorage.getItem('clinic'));
     this.doctor = JSON.parse(localStorage.getItem('doctor'));
-    if(this.day==0)
+    if(this.day == 0)
+    {
+      if(this.clinic.Sunday.isOpen==1)
+      {}
+      else{}
+    }
+    else if(this.day == 1)
+    {
+      if(this.clinic.Monday.isOpen==1)
+      {}
+      else{}
+    }
+    else if(this.day==0)
+    {
+      if(this.clinic.Sunday.isOpen==1)
+      {}
+      else{}
+    }
+    else if(this.day==0)
+    {
+      if(this.clinic.Sunday.isOpen==1)
+      {}
+      else{}
+    }
+    else if(this.day==0)
+    {
+      if(this.clinic.Sunday.isOpen==1)
+      {}
+      else{}
+    }
+    else if(this.day==0)
+    {
+      if(this.clinic.Sunday.isOpen==1)
+      {}
+      else{}
+    }
     console.log(this.doctor);
     console.log(this.clinic);
     console.log(this.day);
