@@ -9,3 +9,9 @@ in the same directory or if it's useful create an alias or an executable in /usr
 2.) sudo apt install npm
 3.) sudo npm -g install ionic cordova
 - to test go to working directory and run ionic serve
+- to test the api 
+  1.) paste appointment-api-v1-master in your webroot
+  2.) cd into api directory 
+  3.) npm install 
+  4.) npm start
+  
