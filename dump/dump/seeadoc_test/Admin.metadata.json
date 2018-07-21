@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"seeadoc_test.Admin"},{"v":2,"unique":true,"key":{"email":1},"name":"email_1","ns":"seeadoc_test.Admin","background":true}],"uuid":"5704d5155969458eb6ec8f7bdd05f857"}
