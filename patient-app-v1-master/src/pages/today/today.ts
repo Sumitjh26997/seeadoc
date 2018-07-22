@@ -94,7 +94,7 @@ export class TodayPage {
     };
     let loader = this.loadingCtrl.create();
     loader.present();
-    this.api.post('users/fetch', passingData)
+    this.api.post('user/fetch', passingData)
       .subscribe(res => {
         console.log('User ', res);
         loader.dismiss();
@@ -191,6 +191,8 @@ export class TodayPage {
       query: {
         clinic: this.common.selectedClinic._id,
         date: this.common.dateFormator(new Date()),
+        //day: this.date.getDay(),
+        status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
       },
     };
     console.log(passingData);

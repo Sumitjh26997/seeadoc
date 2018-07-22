@@ -15,6 +15,9 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'tommorow.html',
 })
 export class TommorowPage {
+  currentDate = new Date();
+  tomorrowDate = (new Date()).setDate(this.currentDate.getDate() + 1);
+  day = this.currentDate.getDay()+1;
 
 
   slots = null;
@@ -152,6 +155,7 @@ export class TommorowPage {
       startTime: slot.start,
       endTime: slot.end,
       bookingDate: this.common.dateFormator(tomorrowDate),
+      status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
     }
     console.log('Passing Data ', passingData);
     let loader = this.loadingCtrl.create();
@@ -185,6 +189,8 @@ export class TommorowPage {
       query: {
         clinic: this.common.selectedClinic._id,
         date: this.common.dateFormator(tomorrowDate),
+        //day : this.currentDate.getDay()+1,
+        status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
       },
     };
     let loader = this.loadingCtrl.create();
