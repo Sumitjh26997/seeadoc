@@ -38,42 +38,42 @@ export class DoctorsPage {
     }
     this.clinic = JSON.parse(localStorage.getItem('clinic'));
     this.doctor = JSON.parse(localStorage.getItem('doctor'));
-    if(this.day == 0)
-    {
-      if(this.clinic.Sunday.isOpen==1)
-      {}
-      else{}
-    }
-    else if(this.day == 1)
-    {
-      if(this.clinic.Monday.isOpen==1)
-      {}
-      else{}
-    }
-    else if(this.day==0)
-    {
-      if(this.clinic.Sunday.isOpen==1)
-      {}
-      else{}
-    }
-    else if(this.day==0)
-    {
-      if(this.clinic.Sunday.isOpen==1)
-      {}
-      else{}
-    }
-    else if(this.day==0)
-    {
-      if(this.clinic.Sunday.isOpen==1)
-      {}
-      else{}
-    }
-    else if(this.day==0)
-    {
-      if(this.clinic.Sunday.isOpen==1)
-      {}
-      else{}
-    }
+    // if(this.day == 0)
+    // {
+    //   if(this.clinic.Sunday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
+    // else if(this.day == 1)
+    // {
+    //   if(this.clinic.Monday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
+    // else if(this.day==0)
+    // {
+    //   if(this.clinic.Sunday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
+    // else if(this.day==0)
+    // {
+    //   if(this.clinic.Sunday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
+    // else if(this.day==0)
+    // {
+    //   if(this.clinic.Sunday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
+    // else if(this.day==0)
+    // {
+    //   if(this.clinic.Sunday.isOpen==1)
+    //   {}
+    //   else{}
+    // }
     console.log(this.doctor);
     console.log(this.clinic);
     console.log(this.day);
