@@ -214,11 +214,14 @@ export class SelectPage {
   }
 
   fetchSlots() {
+    let selectedDate = new Date(this.date); //get selected date in date format 
     let passingData = {
-      query: {
+      
         clinic: this.common.selectedClinic._id,
         date: this.common.dateFormator(this.date),
-      }
+        day: selectedDate.getDay(), //numeric value of day
+        status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
+      
     };
     let loader = this.loadingCtrl.create();
     loader.present();

@@ -38,6 +38,9 @@ export class DoctorsPage {
     }
     this.clinic = JSON.parse(localStorage.getItem('clinic'));
     this.doctor = JSON.parse(localStorage.getItem('doctor'));
+    /*currently working on this section to print timings of current day*/
+
+
     // if(this.day == 0)
     // {
     //   if(this.clinic.Sunday.isOpen==1)

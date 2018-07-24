@@ -186,12 +186,10 @@ export class TommorowPage {
     let tomorrowDate = (new Date()).setDate(currentDate.getDate() + 1);
     console.log('tomorrowDate:', new Date(tomorrowDate));
     let passingData = {
-      query: {
         clinic: this.common.selectedClinic._id,
         date: this.common.dateFormator(tomorrowDate),
-        //day : this.currentDate.getDay()+1,
+        day : this.currentDate.getDay()+1, // numeric value of day for tommorow
         status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
-      },
     };
     let loader = this.loadingCtrl.create();
     loader.present();
