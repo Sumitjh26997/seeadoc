@@ -54,14 +54,18 @@ export class SelectPage {
     let gettime = time.split(':');
     let newTime = parseFloat(gettime[0]);
     let returnTime: any;
-    if (newTime <= 12) {
+    if(newTime==0)  // Display 00:00 time as 12:00AM
+      {
+        returnTime = `${newTime+12}:${gettime[1]} AM`;        
+      }
+     else if (newTime < 12) {
       returnTime = `${newTime}:${gettime[1]} AM`;
     }
-    if (newTime > 12) {
+    else if (newTime > 12) {
       returnTime = `${newTime - 12}:${gettime[1]} PM`;
     }
-    if ((newTime == 12) && (Math.ceil(parseFloat(gettime[1])) == 1)) {
-      returnTime = `${newTime - 12}:${gettime[1]} PM`;
+    else if ((newTime == 12) ) {  //Display 12:00 time as 12:00 PM
+      returnTime = `${newTime}:${gettime[1]} PM`;
     }
     return returnTime;
   }
@@ -70,15 +74,22 @@ export class SelectPage {
     let gettime = time.split(':');
     let newTime = parseFloat(gettime[0]);
     let returnTime: any;
-    if (newTime <= 12) {
+    if(newTime==0)  // Display 00:00 time as 12:00AM
+      {
+        returnTime = `${newTime+12}:${gettime[1]} AM`;        
+      }
+    else if (newTime < 12) {
+      
       returnTime = `${newTime}:${gettime[1]} AM`;
+    
     }
-    if (newTime > 12) {
+    else if (newTime > 12) {
       returnTime = `${newTime - 12}:${gettime[1]} PM`;
     }
-    if ((newTime == 12) && (Math.ceil(parseFloat(gettime[1])) == 1)) {
-      returnTime = `${newTime - 12}:${gettime[1]} PM`;
+    else if ((newTime == 12)) { //Display 12:00 time as 12:00 PM
+      returnTime = `${newTime}:${gettime[1]} PM`;
     }
+    
     return returnTime;
   }
 
@@ -219,7 +230,7 @@ export class SelectPage {
       
         clinic: this.common.selectedClinic._id,
         date: this.common.dateFormator(this.date),
-        day: selectedDate.getDay(), //numeric value of day
+        day: selectedDate.getDay(), //numeric value of day  
         status: {$ne:'cancelled'} // query against status i.e. do not fetch cancelled bookings
       
     };
