@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"seeadoc_test.User"},{"v":2,"unique":true,"key":{"mobile":1},"name":"mobile_1","ns":"seeadoc_test.User","background":true},{"v":2,"key":{"email":1},"name":"email_1","ns":"seeadoc_test.User","background":true}],"uuid":"7a58c69856104c758fe271c4229c003a"}
