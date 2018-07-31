@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
 
-  // public url: string = 'http://localhost:3000/api'; //Local Server
+   public url: string = 'http://localhost:3000/api'; //Local Server
   // public url = 'https://appointment-backend.herokuapp.com/api'; // Heroku Server
-  public url: string = 'http://13.232.149.183:3000/api'; //AWS Server
+  //public url: string = 'http://13.232.149.183:3000/api'; //AWS Server
 
   constructor(public http: HttpClient) {
   }

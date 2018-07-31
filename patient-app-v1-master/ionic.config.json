@@ -1,8 +1,8 @@
 {
   "name": "patient-app",
-  "app_id": "f5fdbd0d",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "f5fdbd0d"
 }
